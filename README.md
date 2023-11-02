@@ -18,6 +18,36 @@
             <a href="https://github.com/pleasemrlostman"><I>정재훈</I></a>
         </td>
     </tr>
+    <tr align="center">
+        <td><B>정재훈<B></td>
+    </tr>
+    <tr align="center">
+        <td>
+            <img src="https://github.com/suniiizz.png?size=100" width="100">
+            <br>
+            <a href="https://github.com/suniiizz"><I>이선희</I></a>
+        </td>
+    </tr>
+    <tr align="center">
+        <td><B>정재훈<B></td>
+    </tr>
+    <tr align="center">
+        <td>
+            <img src="https://github.com/choo-bo-kyoung.png?size=100" width="100">
+            <br>
+            <a href="https://github.com/choo-bo-kyoung"><I>추보경</I></a>
+        </td>
+    </tr>
+    <tr align="center">
+        <td><B>정재훈<B></td>
+    </tr>
+    <tr align="center">
+        <td>
+            <img src="https://github.com/ridemetothemoon12.png?size=100" width="100">
+            <br>
+            <a href="https://github.com/ridemetothemoon12"><I>허정우</I></a>
+        </td>
+    </tr>
 </table>
 
 ## API 문서 링크
