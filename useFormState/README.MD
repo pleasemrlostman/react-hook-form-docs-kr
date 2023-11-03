@@ -19,7 +19,7 @@
 
 | Name               | Type    | Description |
 | ------------------ | ------- | ----------- |
-| isDirty            | boolean | [링크]()    |
+| isDirty            | boolean | [링크](https://github.com/pleasemrlostman/react-hook-form-docs-kr/blob/main/useFormState/Return/isDirty-description.MD)|
 | dirtyFields        | object  |             |
 | touchedFields      | object  |             |
 | defaultValues      | object  |             |
