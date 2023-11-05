@@ -1,0 +1,31 @@
+{
+  "name": "react-hook-form-docs-kr",
+  "version": "1.0.0",
+  "description": "- Reack Hook Form의 효율적이고 다양한 학습법을 배우기 위해 공식문서를 정독하고 번역 후 기록하여 사용 방법을 익힘을 목적으로 합니다.\r - 해당 문서는 [react-hook-form](https://react-hook-form.com/docs) v7 버전을 기준으로 작성했습니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pleasemrlostman/react-hook-form-docs-kr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pleasemrlostman/react-hook-form-docs-kr/issues"
+  },
+  "homepage": "https://github.com/pleasemrlostman/react-hook-form-docs-kr#readme",
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "cz-customizable": "^7.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "cz-config.cjs"
+    }
+  }
+}

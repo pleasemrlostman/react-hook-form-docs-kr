@@ -2,7 +2,7 @@
 
 ## **useFormState: ({ control: Control }) => FormState**
 
-이 사용자 정의 훅은 각 폼 상태를 구독하고 사용자 정의 훅 수준에서 렌더링을 분리 할 수 있게 해줍니다. 이 훅은 폼 상태 **구독** 관련하여 범위를 가지고 있으므로 다른 `useFormState`와 `useForm`에 영향을 미치지 않습니다. 이 훅을 사용하면 크고 복잡한 폼 응용 프로그램에 대한 재 렌더링 영향을 줄일 수 있습니다.
+이 `useFormState`는 각 폼 상태를 구독하고 `useFormState` 훅 수준에서 렌더링을 분리 할 수 있게 해줍니다. 이 훅은 폼 상태 **구독** 관련하여 각각의 범위를 가지고 있으므로 다른 `useFormState`와 `useForm`에 영향을 미치지 않습니다. `useFormState`을 사용하면 크고 복잡한 `useFormState` 응용 프로그램에 대한 재 렌더링 영향을 줄일 수 있습니다.
 
 ### ❗ Props
 
