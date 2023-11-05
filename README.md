@@ -2,8 +2,8 @@
 
 ## 👀 개요
 
-- Reack Hook Form의 효율적이고 다양한 학습법을 배우기 위해 공식문서를 정독하고 번역 후 기록하여 사용 방법을 익힘을 목적으로 합니다.
-- 해당 문서는 [react-hook-form](https://react-hook-form.com/docs) v7 버전을 기준으로 작성했습니다.
+- `Reack Hook Form`의 효율적인 사용법을 배우기 위해 공식문서를 정독 후 번역하여 기록해 사용 방법을 익힘을 목적으로 합니다.
+- 해당 문서는 [react-hook-form](https://react-hook-form.com/docs) `v7` 버전을 기준으로 작성했습니다.
 
 ## 👨‍👦 참여 인원
 
@@ -38,7 +38,7 @@
     </tr>
 </table>
 
-## API 문서 링크
+## 🔗 API 문서 링크
 
 - [useForm](https://github.com/pleasemrlostman/react-hook-form-docs-kr/tree/main/useForm)
 - [useController](https://github.com/pleasemrlostman/react-hook-form-docs-kr/tree/main/useController)
