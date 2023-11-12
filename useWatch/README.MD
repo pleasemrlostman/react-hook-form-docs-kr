@@ -8,12 +8,13 @@
 
 - 다음 표는 `useWatch`에 대한 파라미터에 관한 정보를 포함하고 있습니다.
 
-| Name | Type | Description |
-| name | string, string[], undefined | `useWatch`를 사용할 필드의 이름을 입력합니다. (배열 또는 문자열) |
-| control | Object | useForm에 제공해주는 control 은 formContext를 사용할 경우에 control에 methods를 넣어 사용한다. |
-| defaultValue | unknown | useWatch가 첫 랜더시 가지는 값을 넣어준다. |
-| disabled | boolean = false | useWatch에 걸린 구독 상태를 해제한다. 기본값은 false |
-| exact | boolean = false | 정확하게 일치하는 이름을 가진 register만 useWatch를 사용하도록 하는 옵션값. |
+| Name         | Type                        | Description                                                                                    |
+| ------------ | --------------------------- | ---------------------------------------------------------------------------------------------- |
+| name         | string, string[], undefined | `useWatch`를 사용할 필드의 이름을 입력합니다. (배열 또는 문자열)                               |
+| control      | Object                      | useForm에 제공해주는 control 은 formContext를 사용할 경우에 control에 methods를 넣어 사용한다. |
+| defaultValue | unknown                     | useWatch가 첫 랜더시 가지는 값을 넣어준다.                                                     |
+| disabled     | boolean = false             | useWatch에 걸린 구독 상태를 해제한다. 기본값은 false                                           |
+| exact        | boolean = false             | 정확하게 일치하는 이름을 가진 register만 useWatch를 사용하도록 하는 옵션값.                    |
 
 ### ❗ **Return**
 
