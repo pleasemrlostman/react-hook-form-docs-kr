@@ -154,25 +154,47 @@ function App() {
 }
 ```
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+#### criteriaMode: 모든 유효성 오류를 표시할지 아니면 하나씩 표시할지 여부
 
-### ❗ Generic props:
+`firstError(default) | all`<br/>
 
-| Option                    | Description                                             |
-| ------------------------- | ------------------------------------------------------- |
-| criteriaMode              | 모든 유효성 오류를 표시할지 아니면 하나씩 표시할지 여부 |
-| shouldFocusError          | 내장 포커스 관리를 활성화 또는 비활성화할지 여부        |
-| delayError                | 오류가 즉시 나타나지 않도록 지정된 시간만큼 지연        |
-| shouldUseNativeValidation | 브라우저 기본 form 제약 조건 API를 사용할지 여부        |
-| shouldUnregister          | 언마운트 후 입력을 등록 및 해제할지 여부                |
+- "firstError"로 설정하면 각 필드에서 첫 번째 에러만 감지합니다.
+- "all"로 설정하면 각 필드의 모든 에러를 감지합니다.
 
-### ❗ Schema validation props:
+#### shouldFocusError: 내장 포커스 관리를 활성화 또는 비활성화할지 여부
 
-| Option   | Description                                   |
-| -------- | --------------------------------------------- |
-| resolver | 선호하는 스키마 유효성 검사 라이브러리와 통합 |
+`boolean = true`<br/>
+유효성 검사를 시행하고 나서, 에러가 발생한 form의 focus를 시행할지 설정하는 props입니다..
+focus는 register를 등록한 필드에만 맞춰지며, 등록한 순서대로 진행됩니다.
+
+#### delayError: 오류가 즉시 나타나지 않도록 지정된 시간만큼 지연
+
+`number`<br/>
+오류 상태가 표시되는 시간을 지정된 밀리초만큼 지연시킵니다. 사용자가 오류 입력을 수정하면 오류가 즉시 제거되고 지연이 적용되지 않습니다.
+
+#### shouldUnregister: 브라우저 기본 form 제약 조건 API를 사용할지 여부
+
+` boolean = false`<br/>
+form이 unmount되면 값이 사라지게 만들지, 아닐지 설정하는 props입니다.
+기본값은 false로 설정되어 있습니다.
+만약 true로 설정하고, form이 unmount되면 입력되었던 값이 모조리 사라집니다.
+이 상태에서 submit하게 되면, 값은 없는 상태로 전달되기 됩니다.
+
+#### shouldUnregister: 언마운트 후 입력을 등록 및 해제할지 여부
+
+`boolean = false`<br/>
+브라우저의 기본 유효성 검사를 활성화시키는 props입니다.
+또한, :valid, :invalid와 같은 CSS 선택자를 사용하여, styling을 할 수 있습니다.
+
+#### resolver: 선호하는 스키마 유효성 검사 라이브러리와 통합
+
+`Resolver`<br/>
+이 기능을 사용하면 Yup, Zod, Joi, Vest, Ajv 등 모든 외부 유효성 검사 라이브러리를 사용할 수 있습니다. 원하는 유효성 검사 라이브러리를 원활하게 통합할 수 있도록 하는 것이 목표입니다. 라이브러리를 사용하지 않는 경우 언제든지 자체 로직을 작성하여 양식의 유효성을 검사할 수 있습니다.<br/>
+`npm install @hookform/resolvers`
+| Name | Type | Description |
+| --------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| values | object | 이 개체에는 전체 양식 값이 포함되어 있습니다. |
+| context | object | 사용 양식 구성에 제공할 수 있는 컨텍스트 객체입니다. 렌더링할 때마다 변경할 수 있는 변경 가능한 객체입니다.
+| options |{criteriaMode: string, fields: object, names: string[]} | 사용 양식의 유효성 검사된 필드, 이름 및 기준 모드에 대한 정보를 포함하는 옵션 개체입니다.
+
+//Rules
