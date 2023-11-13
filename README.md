@@ -41,6 +41,9 @@
 ## 🔗 API 문서 링크
 
 - [useForm](https://github.com/pleasemrlostman/react-hook-form-docs-kr/tree/main/useForm)
+  - [handleSubmit](https://github.com/pleasemrlostman/react-hook-form-docs-kr/tree/main/useForm/handleSubmit)
+  - [getFieldState](https://github.com/pleasemrlostman/react-hook-form-docs-kr/tree/main/useForm/getFieldState)
+  - [control](https://github.com/pleasemrlostman/react-hook-form-docs-kr/tree/main/useForm/control)
 - [useController](https://github.com/pleasemrlostman/react-hook-form-docs-kr/tree/main/useController)
 - [useFormContext](https://github.com/pleasemrlostman/react-hook-form-docs-kr/tree/main/useFormContext)
 - [useWatch](https://github.com/pleasemrlostman/react-hook-form-docs-kr/tree/main/useWatch)
