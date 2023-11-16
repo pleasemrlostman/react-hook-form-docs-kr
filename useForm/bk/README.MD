@@ -197,4 +197,86 @@ form이 unmount되면 값이 사라지게 만들지, 아닐지 설정하는 prop
 | context | object | 사용 양식 구성에 제공할 수 있는 컨텍스트 객체입니다. 렌더링할 때마다 변경할 수 있는 변경 가능한 객체입니다.
 | options |{criteriaMode: string, fields: object, names: string[]} | 사용 양식의 유효성 검사된 필드, 이름 및 기준 모드에 대한 정보를 포함하는 옵션 개체입니다.
 
-//Rules
+❗ Rules
+
+- 스키마 유효성 검사는 필드 수준 오류 보고에 중점을 둡니다. 상위 수준 오류 검사는 그룹 확인란과 같은 구성 요소에 적용할 수 있는 직접 상위 수준으로 제한됩니다.
+- 이 기능은 캐시됩니다.
+- 입력의 재검증은 사용자 상호 작용 중에 한 번에 하나의 필드에서만 발생합니다. 라이브러리 자체에서 오류 객체를 평가하여 그에 따라 재렌더링을 트리거합니다.
+- 기본 제공 유효성 검사기(예: 필수, 최소 등)와 함께 리졸버를 사용할 수 없습니다.
+- 사용자 정의 유효성 검사기를 빌드할 때:
+  값과 오류 속성이 모두 포함된 객체를 반환해야 합니다. 기본값은 빈 객체여야 합니다. 예를 들어 {}.
+- 오류 객체의 키는 필드의 이름 값과 일치해야 합니다.
+
+📌 Examples
+
+- YUP
+
+```tsx
+import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+type Inputs = {
+  name: string,
+  age: string,
+};
+
+const schema = yup
+  .object()
+  .shape({
+    name: yup.string().required(),
+    age: yup.number().required(),
+  })
+  .required();
+
+const App = () => {
+  const { register, handleSubmit } =
+    useForm <
+    Inputs >
+    {
+      resolver: yupResolver(schema), //
+    };
+
+  return (
+    <form onSubmit={handleSubmit((d) => console.log(d))}>
+      <input {...register("name")} />
+      <input type="number" {...register("age")} />
+      <input type="submit" />
+    </form>
+  );
+};
+```
+
+- ZOD
+
+````tsx
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import * as z from "zod"
+
+const schema = z.object({
+  name: z.string(),
+  age: z.number(),
+})
+
+type Schema = z.infer<typeof schema>
+
+const App = () => {
+  const { register, handleSubmit } = useForm<Schema>({
+    resolver: zodResolver(schema),
+  })
+
+  const onSubmit = (data: Schema) => {
+    console.log(data)
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("name")} />
+      <input {...register("age", { valueAsNumber: true })} type="number" />
+      <input type="submit" />
+    </form>
+  )
+}```
+````
