@@ -39,9 +39,11 @@ const { onChange, onBlur, name, ref } = register('firstName');
 #### ❗Options
 
 유효성 검사만 등록하거나, 오류 메시지와 함께 등록하는 방법이 있다.<br/>
-우선 유효성 검사만 등록하는 경우
+Type 참고는 document를 봐주세요. \* https://react-hook-form.com/docs/useform/register
 
-| Name(type)        | Description                                                                                                                                                                                                                                                                      | Code Examples                                          |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| ref(React.Ref)    | React element ref                                                                                                                                                                                                                                                                | `<input {...register("test")} />`                      |
-| required(boolean) | 참이면 양식을 제출하기 전에 입력에 값이 있어야 함을 나타내는 부울입니다. 오류 객체에서 오류 메시지를 반환하는 문자열을 지정할 수 있습니다. 참고: 이 구성은 필수 입력 유효성 검사에 대한 웹 제약 API와 일치하며, 객체 또는 배열 유형의 입력은 대신 유효성 검사 함수를 사용합니다. | `<input {...register("test", {    required: true})}/>` |
+| Name      | Description                                                                                                                                | Code Examples(유효성 검사만)                     | Code Examples(유효성 검사와 에러메세지)                                            |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| ref       | React element ref                                                                                                                          | `<input {...register("ex")} />`                  |
+| required  | 제출하기 전에 필수로 입력된 값이 있어야 하는지를 나타내는 boolean입니다. 오류 객체에서 오류 메시지를 반환하는 문자열을 지정할 수 있습니다. | `<input {...register("ex", {required: true})}/>` | `<input {...register("ex", {required: 'error message' })}/>`                       |
+| maxLength | 허용할 값의 최대 길이입니다.                                                                                                               | `<input {...register("ex", {maxLength: 2})}/>`   | `<input {...register("ex", {maxLength: : {value: 2,message: 'error message'}})}/>` |
+| minLength | 허용할 값의 최소 길이입니다.                                                                                                               | `<input {...register("ex", {minLength: 2})}/>`   | `<input {...register("ex", {minLength:{value: 2,message: 'error message'}})}/>`    |
